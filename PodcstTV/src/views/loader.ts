@@ -17,7 +17,7 @@ const view = ({ title }: ILoaderProps) => `
 `;
 
 const Loader: TView<ILoaderProps> = (props) => {
-  return DOM.renderDoc(view(props));
+  return DOM.parse(view(props));
 };
 
 export default Loader;

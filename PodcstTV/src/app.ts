@@ -26,12 +26,11 @@ import PopularGrid from './views/popular-grid';
  */
 App.onLaunch = async function(_options) {
   const loader = Loader({ title: 'PodcstTV' });
-  DOM.render(loader);
+  navigationDocument.pushDocument(loader);
   const podcasts = await api.top();
   const popularGrid = PopularGrid({ podcasts });
-  DOM.render(popularGrid);
+  navigationDocument.replaceDocument(popularGrid, loader);
 }
-
 
 App.onWillResignActive = function() {
 

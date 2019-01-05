@@ -62,7 +62,7 @@ const view = ({ podcasts }: IPopularGridProps) => {
 }
 
 const PopularGrid: TView<IPopularGridProps> = (props) => {
-  return DOM.renderDoc(view(props));
+  return DOM.parse(view(props));
 };
 
 export default PopularGrid;

@@ -1,10 +1,7 @@
 const DOM = {
-  renderDoc(view: string): Document {
+  parse(view: string): Document {
     const parser = new DOMParser();
     return parser.parseFromString(view.trim(), 'application/xml');
-  },
-  render(doc: Document) {
-    navigationDocument.pushDocument(doc);
   },
 }
 
