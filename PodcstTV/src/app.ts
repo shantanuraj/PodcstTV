@@ -8,18 +8,8 @@
 //  Copyright © 2019 Shantanu Raj. All rights reserved.
 //
 
+import DOM from './utils/dom';
 import Loader from './views/loader';
-
-/*
- * This file provides an example skeletal stub for the server-side implementation
- * of a TVML application.
- *
- * A javascript file such as this should be provided at the tvBootURL that is
- * configured in the AppDelegate of the TVML application. Note that  the various
- * javascript functions here are referenced by name in the AppDelegate. This skeletal
- * implementation shows the basic entry points that you will want to handle
- * application lifecycle events.
- */
 
 /**
  * @description The onLaunch callback is invoked after the application JavaScript
@@ -34,7 +24,7 @@ import Loader from './views/loader';
  */
 App.onLaunch = async function(_options: {}) {
   const loader = Loader({ title: 'PodcstTV' });
-  navigationDocument.pushDocument(loader);
+  DOM.render(loader);
 }
 
 

@@ -14,7 +14,6 @@
 /* Begin PBXFileReference section */
 		30DCED8121E0D1DA00E15AAC /* PodcstTV.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PodcstTV.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		30DCED8421E0D1DA00E15AAC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		30DCED8621E0D1DA00E15AAC /* application.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = application.js; sourceTree = "<group>"; };
 		30DCED8721E0D1DC00E15AAC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		30DCED8921E0D1DC00E15AAC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -49,20 +48,11 @@
 		30DCED8321E0D1DA00E15AAC /* PodcstTV */ = {
 			isa = PBXGroup;
 			children = (
-				30DCED8F21E0DB4700E15AAC /* dist-scripts */,
 				30DCED8421E0D1DA00E15AAC /* AppDelegate.swift */,
 				30DCED8721E0D1DC00E15AAC /* Assets.xcassets */,
 				30DCED8921E0D1DC00E15AAC /* Info.plist */,
 			);
 			path = PodcstTV;
-			sourceTree = "<group>";
-		};
-		30DCED8F21E0DB4700E15AAC /* dist-scripts */ = {
-			isa = PBXGroup;
-			children = (
-				30DCED8621E0D1DA00E15AAC /* application.js */,
-			);
-			path = "dist-scripts";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
