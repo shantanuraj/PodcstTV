@@ -8,6 +8,8 @@
 //  Copyright © 2019 Shantanu Raj. All rights reserved.
 //
 
+import Loader from './views/loader';
+
 /*
  * This file provides an example skeletal stub for the server-side implementation
  * of a TVML application.
@@ -18,26 +20,6 @@
  * implementation shows the basic entry points that you will want to handle
  * application lifecycle events.
  */
-
-/**
-* This convenience funnction returns an alert template, which can be used to present errors to the user.
-*/
-const createLoader = function(title: string) {
-
-  const loadingView = `<?xml version="1.0" encoding="UTF-8" ?>
-      <document>
-          <loadingTemplate>
-              <activityIndicator>
-                  <title>${title}</title>
-              </activityIndicator>
-          </loadingTemplate>
-      </document>`;
-
-  const parser = new DOMParser();
-  const loadingDoc = parser.parseFromString(loadingView, "application/xml");
-
-  return loadingDoc;
-}
 
 /**
  * @description The onLaunch callback is invoked after the application JavaScript
@@ -51,7 +33,7 @@ const createLoader = function(title: string) {
  * the URL that was used to retrieve the application JavaScript.
  */
 App.onLaunch = async function(_options: {}) {
-  const loader = createLoader("PodcstTV");
+  const loader = Loader({ title: 'PodcstTV' });
   navigationDocument.pushDocument(loader);
 }
 
