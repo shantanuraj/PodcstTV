@@ -2,7 +2,7 @@ interface HeadersMap {
   [key: string]: any;
 }
 
-interface IFetchOptions {
+export interface IFetchOptions {
   body?: any;
   credentials?: string;
   method?: 'get' | 'put' | 'post' | 'delete';

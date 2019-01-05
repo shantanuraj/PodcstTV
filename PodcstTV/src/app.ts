@@ -8,9 +8,10 @@
 //  Copyright © 2019 Shantanu Raj. All rights reserved.
 //
 
-import fetch from './utils/fetch';
+import api from './utils/api';
 import DOM from './utils/dom';
 import Loader from './views/loader';
+import PopularGrid from './views/popular-grid';
 
 /**
  * @description The onLaunch callback is invoked after the application JavaScript
@@ -23,13 +24,12 @@ import Loader from './views/loader';
  * The location attribute is automatically added to the object and represents
  * the URL that was used to retrieve the application JavaScript.
  */
-App.onLaunch = async function(options) {
-  const loader = Loader({ title: 'ATV' });
+App.onLaunch = async function(_options) {
+  const loader = Loader({ title: 'PodcstTV' });
   DOM.render(loader);
-  const title = await fetch(`${options.BASEURL}/text`)
-    .then(res => res.text());
-  const meloader = Loader({ title });
-    DOM.render(meloader);
+  const podcasts = await api.top();
+  const popularGrid = PopularGrid({ podcasts });
+  DOM.render(popularGrid);
 }
 
 
