@@ -8,6 +8,7 @@
 //  Copyright © 2019 Shantanu Raj. All rights reserved.
 //
 
+import fetch from './utils/fetch';
 import DOM from './utils/dom';
 import Loader from './views/loader';
 
@@ -22,9 +23,13 @@ import Loader from './views/loader';
  * The location attribute is automatically added to the object and represents
  * the URL that was used to retrieve the application JavaScript.
  */
-App.onLaunch = async function(_options: {}) {
-  const loader = Loader({ title: 'PodcstTV' });
+App.onLaunch = async function(options) {
+  const loader = Loader({ title: 'ATV' });
   DOM.render(loader);
+  const title = await fetch(`${options.BASEURL}/text`)
+    .then(res => res.text());
+  const meloader = Loader({ title });
+    DOM.render(meloader);
 }
 
 

@@ -1,5 +1,10 @@
+interface ILaunchOptions {
+  location: string;
+  BASEURL: string;
+}
+
 interface ITVApp {
-  onLaunch(options: {}): Promise<void>;
+  onLaunch(options: ILaunchOptions): Promise<void>;
   onWillResignActive(): void;
   onDidEnterBackground(): void;
   onWillEnterForeground(): void;
