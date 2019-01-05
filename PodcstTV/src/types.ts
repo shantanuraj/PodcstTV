@@ -11,128 +11,109 @@ export type ExplicitState = 'explicit' | 'cleaned' | 'notExplicit';
 export type FeedType = 'top';
 
 /**
- * Application type dependencies
+ * Adapted Podcast interface
  */
-export declare namespace App {
+export interface IPodcast {
   /**
-   * Adapted Podcast interface
+   * iTunes id of the podcast
    */
-  interface IPodcast {
-    /**
-     * iTunes id of the podcast
-     */
-    id: number;
-    /**
-     * Podcast author
-     */
-    author: string;
-    /**
-     * Podcast rss feed
-     */
-    feed: string;
-    /**
-     * Podcast title
-     */
-    title: string;
-    /**
-     * Podcast large cover art
-     */
-    cover: string;
-    /**
-     * Podcast small cover art
-     */
-    thumbnail: string;
-    /**
-     * List of categories podcast appears in
-     */
-    categories: number[];
-    /**
-     * Podcast's explicitness
-     */
-    explicit: ExplicitState;
-    /**
-     * Podcast's episode count
-     */
-    count: number;
-  }
-
+  id: number;
   /**
-   * Adapted Episode interface
+   * Podcast author
    */
-  interface IEpisode {
-    title: string;
-    summary: string | null;
-    published: number | null;
-    cover: string;
-    explicit: boolean;
-    duration: number | null;
-    link: string | null;
-    file: IFileInfo;
-    author: string | null;
-    episodeArt: string | null;
-    showNotes: string;
-  }
-
+  author: string;
   /**
-   * Adapted Episode with feed info
+   * Podcast rss feed
    */
-  interface IEpisodeInfo extends IEpisode {
-    feed: string;
-  }
-
+  feed: string;
   /**
-   * Episode listing
+   * Podcast title
    */
-  interface IEpisodeListing {
-    title: string;
-    link: string;
-    published: number | null;
-    description: string;
-    author: string;
-    cover: string;
-    keywords: string[];
-    explicit: boolean;
-    episodes: IEpisode[];
-  }
-
+  title: string;
   /**
-   * Episode info listing
+   * Podcast large cover art
    */
-  interface IPodcastEpisodesInfo extends IEpisodeListing {
-    episodes: IEpisodeInfo[];
-    feed: string;
-  }
-
-  type RenderablePodcast = IPodcast | IPodcastEpisodesInfo;
-
+  cover: string;
   /**
-   * Podcasts Search result interface
+   * Podcast small cover art
    */
-  interface IPodcastSearchResult {
-    id: number;
-    author: string;
-    feed: string;
-    thumbnail: string;
-    title: string;
-  }
+  thumbnail: string;
+  /**
+   * List of categories podcast appears in
+   */
+  categories: number[];
+  /**
+   * Podcast's explicitness
+   */
+  explicit: ExplicitState;
+  /**
+   * Podcast's episode count
+   */
+  count: number;
+}
 
-  type ThemeMode = 'dark' | 'light';
+/**
+ * Adapted Episode interface
+ */
+export interface IEpisode {
+  title: string;
+  summary: string | null;
+  published: number | null;
+  cover: string;
+  explicit: boolean;
+  duration: number | null;
+  link: string | null;
+  file: IFileInfo;
+  author: string | null;
+  episodeArt: string | null;
+  showNotes: string;
+}
 
-  interface ITheme {
-    accent: string;
-    background: string;
-    backgroundDark: string;
-    backgroundLight: string;
-    backgroundSearch: string;
-    loaderAnimation: string;
-    subTitle: string;
-    text: string;
-    textLight: string;
-  }
+/**
+ * Adapted Episode with feed info
+ */
+export interface IEpisodeInfo extends IEpisode {
+  feed: string;
+}
+
+/**
+ * Episode listing
+ */
+export interface IEpisodeListing {
+  title: string;
+  link: string;
+  published: number | null;
+  description: string;
+  author: string;
+  cover: string;
+  keywords: string[];
+  explicit: boolean;
+  episodes: IEpisode[];
+}
+
+/**
+ * Episode info listing
+ */
+export interface IPodcastEpisodesInfo extends IEpisodeListing {
+  episodes: IEpisodeInfo[];
+  feed: string;
+}
+
+export type RenderablePodcast = IPodcast | IPodcastEpisodesInfo;
+
+/**
+ * Podcasts Search result interface
+ */
+export interface IPodcastSearchResult {
+  id: number;
+  author: string;
+  feed: string;
+  thumbnail: string;
+  title: string;
 }
 
 export interface ISubscriptionsMap {
-  [feed: string]: App.IPodcastEpisodesInfo;
+  [feed: string]: IPodcastEpisodesInfo;
 }
 
 export interface IFileInfo {

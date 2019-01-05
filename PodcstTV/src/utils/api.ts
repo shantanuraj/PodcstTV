@@ -1,5 +1,5 @@
 import fetch, { IFetchOptions } from './fetch';
-import { App } from '../types';
+import { IPodcast } from '../types';
 
 const BASE_URL = 'https://data.podcst.io';
 
@@ -10,7 +10,7 @@ const api = {
   },
 
   top() {
-    return this.request<App.IPodcast[]>('/top?limit=100');
+    return this.request<IPodcast[]>('/top?limit=100');
   },
 };
 
