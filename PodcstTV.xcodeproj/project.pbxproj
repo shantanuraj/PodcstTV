@@ -49,12 +49,20 @@
 		30DCED8321E0D1DA00E15AAC /* PodcstTV */ = {
 			isa = PBXGroup;
 			children = (
+				30DCED8F21E0DB4700E15AAC /* dist-scripts */,
 				30DCED8421E0D1DA00E15AAC /* AppDelegate.swift */,
-				30DCED8621E0D1DA00E15AAC /* application.js */,
 				30DCED8721E0D1DC00E15AAC /* Assets.xcassets */,
 				30DCED8921E0D1DC00E15AAC /* Info.plist */,
 			);
 			path = PodcstTV;
+			sourceTree = "<group>";
+		};
+		30DCED8F21E0DB4700E15AAC /* dist-scripts */ = {
+			isa = PBXGroup;
+			children = (
+				30DCED8621E0D1DA00E15AAC /* application.js */,
+			);
+			path = "dist-scripts";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
