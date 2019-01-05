@@ -1,4 +1,5 @@
 import { TView } from '../types';
+import DOM from '../utils/dom';
 
 interface ILoaderProps {
   title: string;
@@ -16,8 +17,7 @@ const view = ({ title }: ILoaderProps) => `
 `;
 
 const Loader: TView<ILoaderProps> = (props) => {
-  const parser = new DOMParser();
-  return parser.parseFromString(view(props), 'application/xml');
+  return DOM.render(view(props));
 };
 
 export default Loader;
